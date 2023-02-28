@@ -2,7 +2,7 @@
 [English](https://github.com/FlankGir1/ImGui-AntiRecoil/blob/main/README-en.md)
 
 # ImGui-AntiRecoil
-* 一部コードが削除されています。
+* 諸事情により一部コードが削除されています。
 
 ## 使い方
 * VisualStudioで"Release + x64"でコンパイルする
