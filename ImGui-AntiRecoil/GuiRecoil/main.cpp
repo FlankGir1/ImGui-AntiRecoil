@@ -265,6 +265,10 @@ void Check()
     // 割り当てたキーが重複していないか
     if (g.RecoilKey1st == g.RecoilKey2nd)
         g.RecoilKey2nd = 0;
+    
+    // 1stキーに何も割り当てられていなかったら2ndにも割り当てない
+    if (g.RecoilKey1st == 0)
+        g.RecoilKey2nd = 0;
 
     // Hide Keyにマウスの1と2を割り当てられないようにする
     if (g.HideKey == 1 || g.HideKey == 2)
