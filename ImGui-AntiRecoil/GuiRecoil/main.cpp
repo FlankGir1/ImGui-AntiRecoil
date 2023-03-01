@@ -25,6 +25,7 @@ void RecoiLoop()
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
+    // ImGui Example DX11がベース
     WNDCLASSEXW wc = { sizeof(wc), CS_CLASSDC, WndProc, 0L, 0L, GetModuleHandle(NULL), NULL, NULL, NULL, L"Nz", L"Window", NULL };
 
     // 既に実行されていないかチェック
@@ -96,7 +97,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
             tmp = false;
         }
 
-        // もし"ShoeMenu == true"だったら自身のウィンドウとメニューを表示
+        // もし"ShowMenu == true"だったら自身のウィンドウとメニューを表示
         if (ShowMenu)
         {
             ShowWindow(hwnd, SW_SHOW);
