@@ -113,7 +113,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
         {
             ShowWindow(hwnd, SW_SHOW);
             m.m_Menu();
-                
         } 
         else
         {
