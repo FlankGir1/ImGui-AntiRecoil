@@ -151,31 +151,23 @@ void KeyBinder()
                             {
                             case 1:
                                 g.RecoilKey1st = 0;
-                                g.BindId = 0;
-                                g.BindState = false;
-                                g.KeyBindButton = false;
                                 break;
                             case 2:
                                 g.RecoilKey2nd = 0;
-                                g.BindId = 0;
-                                g.BindState = false;
-                                g.KeyBindButton = false;
                                 break;
                             case 3:
                                 g.ToggleKey = 0;
-                                g.BindId = 0;
-                                g.BindState = false;
-                                g.KeyBindButton = false;
                                 break;
                             case 4:
                                 g.HideKey = 0;
-                                g.BindId = 0;
-                                g.BindState = false;
-                                g.KeyBindButton = false;
                                 break;
                             default:
                                 break;
                             }
+
+                            g.BindId = 0;
+                            g.BindState = false;
+                            g.KeyBindButton = false;
 
                             break;
                         }
@@ -185,31 +177,23 @@ void KeyBinder()
                             {
                             case 1:
                                 g.RecoilKey1st = i;
-                                g.BindId = 0;
-                                g.BindState = false;
-                                g.KeyBindButton = false;
                                 break;
                             case 2:
                                 g.RecoilKey2nd = i;
-                                g.BindId = 0;
-                                g.BindState = false;
-                                g.KeyBindButton = false;
                                 break;
                             case 3:
                                 g.ToggleKey = i;
-                                g.BindId = 0;
-                                g.BindState = false;
-                                g.KeyBindButton = false;
                                 break;
                             case 4:
                                 g.HideKey = i;
-                                g.BindId = 0;
-                                g.BindState = false;
-                                g.KeyBindButton = false;
                                 break;
                             default:
                                 break;
                             }
+
+                            g.BindId = 0;
+                            g.BindState = false;
+                            g.KeyBindButton = false;
 
                             break;
                         }
