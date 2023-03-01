@@ -2,10 +2,7 @@
 [English](https://github.com/FlankGir1/ImGui-AntiRecoil/blob/main/README-en.md)
 
 
-# ImGui-AntiRecoil
-ApexLegendsで最も使われたであろうアンチリコイルの外部ソフトウェアの発展版。  
-人々はこれを"ジッターマクロ"と呼びました。  
-  
+# ImGui-AntiRecoil  
 * ImGuiを使用した比較的シンプルなアンチリコイルツール。
 * 設定の保存/読み込み機能が削除されているので実装はご自身でお願いします。
 
