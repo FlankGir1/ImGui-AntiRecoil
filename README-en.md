@@ -9,7 +9,7 @@
 
 ## Note
 * Can be detected by anti-cheat in each game
-* We will not be held responsible if you are banned.
+* I will not be held responsible if you are banned.
 
 ### Credit
 * ImGui  
