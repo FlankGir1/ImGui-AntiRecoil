@@ -29,7 +29,6 @@ void Menu::m_Menu()
     if (!g.Random)
     {
         ImGui::SliderInt(skCrypt("##recoil"), &g.Recoil, 1, 30); ImGui::SameLine();
-
         ImGui::Text(skCrypt("Recoil"));
         switch (g.Type)
         {
@@ -37,12 +36,10 @@ void Menu::m_Menu()
             break;
         case 1:
             ImGui::SliderInt(skCrypt("##Downward"), &g.RecoilUnder, 0, 30); ImGui::SameLine();
-
             ImGui::Text(skCrypt("Downward"));
             break;
         case 2:
             ImGui::SliderInt(skCrypt("##Downward"), &g.RecoilUnder, 0, 30); ImGui::SameLine();
-
             ImGui::Text(skCrypt("Downward"));
             break;
         default:
@@ -52,11 +49,9 @@ void Menu::m_Menu()
     else
     {
         ImGui::SliderInt(skCrypt("##MinValue"), &g.MinValue, 1, 5); ImGui::SameLine();
-
         ImGui::Text(skCrypt("MinValue"));
 
         ImGui::SliderInt(skCrypt("##MaxValue"), &g.MaxValue, 6, 30); ImGui::SameLine();
-
         ImGui::Text(skCrypt("MaxValue"));
 
         switch (g.Type)
@@ -65,12 +60,10 @@ void Menu::m_Menu()
             break;
         case 1:
             ImGui::SliderInt(skCrypt("##Downward"), &g.RecoilUnder, 0, 30); ImGui::SameLine();
-
             ImGui::Text(skCrypt("Downward"));
             break;
         case 2:
             ImGui::SliderInt(skCrypt("##Downward"), &g.RecoilUnder, 0, 30); ImGui::SameLine();
-
             ImGui::Text(skCrypt("Downward"));
             break;
         default:
@@ -79,7 +72,6 @@ void Menu::m_Menu()
     }
 
     ImGui::SliderInt(skCrypt("##Sleep"), &g.SleepTime, 1, 150); ImGui::SameLine();
-
     ImGui::Text(skCrypt("SleepTime"));
 
     ImGui::PopItemWidth();
