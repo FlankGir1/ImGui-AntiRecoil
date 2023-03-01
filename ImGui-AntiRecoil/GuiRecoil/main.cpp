@@ -137,6 +137,7 @@ void KeyBinder()
         {
             while (true)
             {
+                // メニュー用
                 g.BindState = true;
 
                 for (int i = 0; i < 0x87; i++)
@@ -215,7 +216,7 @@ void KeyBinder()
                     }
                 }
 
-                // while (true) なので無難にこうやって出る
+                // while (true) なので
                 if (!g.BindState)
                     break;
             }
