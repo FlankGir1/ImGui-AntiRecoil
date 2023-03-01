@@ -1,6 +1,9 @@
 [ Readme ]  
 [English](https://github.com/FlankGir1/ImGui-AntiRecoil/blob/main/README-en.md)
 
+ApexLegendsで最も使われたであろうアンチリコイルの外部ソフトウェア。
+人々はこれを"ジッターマクロ"と呼びました。
+
 # ImGui-AntiRecoil
 * ImGuiを使用した比較的シンプルなアンチリコイルツール。
 * 設定の保存/読み込み機能が削除されているので実装はご自身でお願いします。
@@ -11,8 +14,7 @@
 * Randomize  
   -> (未完成ですが) 値をランダム化
 * Sound  
-  -> 切り替えキーを押して有効/無効を切り替えた時にビープ音を鳴らす    
-  
+  -> 切り替えキーを押して有効/無効を切り替えた時にビープ音を鳴らす
 * 3つのモード  
   -> 真下に動く通常モード、左右に動くジッターモード、ひし形のような挙動のCircleモード
 * KeyBinder  
