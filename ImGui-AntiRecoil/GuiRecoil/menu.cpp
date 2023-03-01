@@ -1,28 +1,36 @@
 ﻿#include "menu.h"
 
+// ImGuiのComboで使用する
 const char* InputName[] = { "SendInput", "mouse_event" };
 const char* TypeName[] = { "Normal", "Shake", "Circle" };
 
+// ImGuiのメニュー用
 void Menu::m_Menu()
 {
+    // ImGuiのウィンドウの設定 / 作成等
     ImGui::SetNextWindowPos(ImVec2(-1, 0));
     ImGui::SetNextWindowSize(ImVec2(Width - 14, Height - 37)); // なんかズレるので少し調整
     ImGui::Begin(skCrypt("(removed)"), (bool*)NULL, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoCollapse);
-
+    
+    // チェックボックス
     ImGui::Checkbox(skCrypt("AntiRecoil"), &g.AntiRecoil);
     ImGui::Checkbox(skCrypt("Randomize"), &g.Random);
     ImGui::Checkbox(skCrypt("Sound"), &g.Sound);
 
+    // 改行と横線みたいなの
     ImGui::NewLine();
     ImGui::Separator();
     ImGui::NewLine();
 
+    // Sliderとかの幅 (開始)
     ImGui::PushItemWidth(150.f);
 
     ImGui::Text(skCrypt("[+] Recoil"));
+    // ドロップダウンのリストから選択するやつ
     ImGui::Combo(skCrypt("Type"), &g.Type, TypeName, IM_ARRAYSIZE(TypeName));
-
+    // Sliderとかの幅 (終了)
     ImGui::PopItemWidth();
+    
     ImGui::NewLine();
     ImGui::PushItemWidth(225.f);
 
@@ -48,6 +56,7 @@ void Menu::m_Menu()
     }
     else
     {
+        // ここら辺、変数が違っても文字列が同じだとなんか同期されちゃったような覚えがある。注意
         ImGui::SliderInt(skCrypt("##MinValue"), &g.MinValue, 1, 5); ImGui::SameLine();
         ImGui::Text(skCrypt("MinValue"));
 
@@ -118,6 +127,7 @@ void Menu::m_Menu()
             g.KeyBindButton = true;
         }
 
+        // KeyNamesからg.RecoilKey1st(割り当てたキー)番目のやつを出力する
         ImGui::Text("1st : %s", KeyNames[g.RecoilKey1st], g.RecoilKey1st);
         ImGui::Text("2nd : %s", KeyNames[g.RecoilKey2nd], g.RecoilKey2nd);
         ImGui::NewLine();
@@ -192,6 +202,7 @@ void Menu::m_Menu()
     ImGui::End();
 }
 
+// ImGuiのスタイル。色も変更可能
 void Menu::LoadStyle()
 {
     // Style
