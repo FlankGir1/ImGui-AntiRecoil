@@ -28,6 +28,6 @@
 * 各ゲームのアンチチートにより検出/BANされる危険性があります。
 * 自己責任で使ってください。
 
-### Credit
+## Credit
 * ImGui  
 https://github.com/ocornut/imgui
