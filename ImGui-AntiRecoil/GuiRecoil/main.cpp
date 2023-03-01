@@ -1,12 +1,18 @@
 ﻿#include "menu.h"
 
+// 各クラスから関数を呼び出したいので
 Recoil r;
 Menu m;
+
+// アプリケーション自体のウィンドウ
 HWND hwnd = NULL;
 
-bool ShowMenu = true;
+// recoil.cppで定義されているのをここmain.cppでも使えるようにする
 extern bool IsKeyDown(int VK);
 
+bool ShowMenu = true;
+
+// 本体は下の方にあるけどあらかじめ宣言しておく
 void Check();
 void KeyBinder();
 
@@ -23,6 +29,8 @@ void RecoiLoop()
     ExitThread(0);
 }
 
+// このプログラムのメイン
+// int main()
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
     // ImGui Example DX11がベース
@@ -40,13 +48,15 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     RegisterClassExW(&wc);
     hwnd = CreateWindow(wc.lpszClassName, wc.lpszMenuName, WS_SYSMENU | WS_MINIMIZEBOX, 100, 100, Width, Height, NULL, NULL, wc.hInstance, NULL);
 
+    // Init D3D
     if (!CreateDeviceD3D(hwnd))
     {
         CleanupDeviceD3D();
         UnregisterClass(wc.lpszClassName, wc.hInstance);
         return 1;
     }
-
+    
+    // Update window
     ShowWindow(hwnd, SW_SHOWDEFAULT);
     UpdateWindow(hwnd);
 
@@ -59,6 +69,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     // ImGuiのスタイルのロード
     m.LoadStyle();
 
+    // バックグラウンドの色。そこまで関係ない
     ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
 
     ImGui_ImplWin32_Init(hwnd);
@@ -134,21 +145,25 @@ void KeyBinder()
 {
     while (g.Active)
     {
+        // メニュー側でKeyBindのボタンが押されたら
         if (g.KeyBindButton)
         {
+            // 無限ループ
             while (true)
             {
-                // メニュー用
+                // メニュー用。trueの間メニューで"Press any Key!"が表示される。
                 g.BindState = true;
 
                 for (int i = 0; i < 0x87; i++)
                 {
+                    // キーが押されたら
                     if (IsKeyDown(i))
                     {
-                        // Escape
+                        // 押されたキーがEscapeだったら
                         if (i == 27)
                         {
-                            switch (g.BindId)
+                            // 各対応するキーを"NONE"にする
+                            switch (g.BindId) // 押されたボタンごとに違うのでそれで判定
                             {
                             case 1:
                                 g.RecoilKey1st = 0;
@@ -166,14 +181,17 @@ void KeyBinder()
                                 break;
                             }
 
+                            // 終了
                             g.BindId = 0;
                             g.BindState = false;
                             g.KeyBindButton = false;
 
                             break;
                         }
+                        // Escape以外だったら
                         else
                         {
+                            // 押されたキーを変数にバインドする
                             switch (g.BindId)
                             {
                             case 1:
@@ -192,6 +210,7 @@ void KeyBinder()
                                 break;
                             }
 
+                            // 終了
                             g.BindId = 0;
                             g.BindState = false;
                             g.KeyBindButton = false;
@@ -201,14 +220,14 @@ void KeyBinder()
                     }
                 }
 
-                // while (true) なので
+                // 割り当てが完了したらループから抜ける
                 if (!g.BindState)
                     break;
             }
         }
         else
         {
-            // CPUリソース削減用
+            // CPUリソース削減用。これがないとRyzen9 5900XでもCPUを12%くらい使う。
             std::this_thread::sleep_for(std::chrono::milliseconds(1));
         }
 
@@ -222,6 +241,7 @@ void KeyBinder()
 // 脳筋VALUE CHECKER
 void Check()
 {
+    // ボタンで変数をいじれるようにしていた時の名残。いらないかもしれない
     if (g.Recoil < 1)
         g.Recoil = 1;
     else if (g.Recoil > 30)
@@ -243,12 +263,15 @@ void Check()
     else if (g.MaxValue > 30)
         g.MaxValue = 30;
 
+    // 割り当てたキーが重複していないか
     if (g.RecoilKey1st == g.RecoilKey2nd)
         g.RecoilKey2nd = 0;
 
+    // Hide Keyにマウスの1と2を割り当てられないようにする
     if (g.HideKey == 1 || g.HideKey == 2)
         g.HideKey = 0;
-
+    
+    // Toggle Keyにも。
     if (g.ToggleKey == 1 || g.ToggleKey == 2)
         g.ToggleKey = 0;
 }
