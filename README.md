@@ -5,7 +5,7 @@ ApexLegendsで最も使われたであろうアンチリコイルの外部ソフ
 人々はこれを"ジッターマクロ"と呼びました。
 
 # ImGui-AntiRecoil
-* ImGuiを使用した比較的シンプルなアンチリコイルツール。
+* ImGuiを使用した比較的シンプルなアンチリコイルツール。  
 * 設定の保存/読み込み機能が削除されているので実装はご自身でお願いします。
 
 ![image](https://user-images.githubusercontent.com/124275926/222131768-5e7c8776-ee33-4fa6-9ae7-faed57763fca.png)
