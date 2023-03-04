@@ -1,6 +1,8 @@
 [ Readme ]  
 [English](https://github.com/FlankGir1/ImGui-AntiRecoil/blob/main/README-en.md)
 
+ApexLegendsで最も使われたであろう外部アプリケーションの改善版のソースです。  
+なんでこんなのを持ってるのかは聞かないでください。  
 
 # ImGui-AntiRecoil  
 * ImGuiを使用した比較的シンプルなアンチリコイルツール。
