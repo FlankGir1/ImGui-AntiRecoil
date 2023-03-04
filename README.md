@@ -1,7 +1,7 @@
 [ Readme ]  
 [English](https://github.com/FlankGir1/ImGui-AntiRecoil/blob/main/README-en.md)
 
-ApexLegendsで最も使われたであろう外部アプリケーションの改善版のソースです。  
+ApexLegendsで最も使われたであろう外部の独立したアプリケーションです。  
 なんでこんなのを持ってるのかは聞かないでください。  
 
 # ImGui-AntiRecoil  
