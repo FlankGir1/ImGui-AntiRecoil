@@ -1,10 +1,9 @@
 [ Readme ]  
 [English](https://github.com/FlankGir1/ImGui-AntiRecoil/blob/main/README-en.md)
 
+# ImGui-AntiRecoil  
 ApexLegendsで最も使われたであろう外部の独立したアプリケーションです。  
 なんでこんなのを持ってるのかは聞かないでください。  
-
-# ImGui-AntiRecoil  
 * ImGuiを使用した比較的シンプルなアンチリコイルツール。
 * 設定の保存/読み込み機能が削除されているので実装はご自身でお願いします。無いと不便です。
 
