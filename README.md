@@ -2,9 +2,6 @@
 このソフトウェアはあくまでも学習や教育用です。  
 このソフトウェアを上記の用途以外の目的で使用して発生したいかなる損害についても私(FlankGir1)は保証しません。
 
-[ Readme ]  
-[English](https://github.com/FlankGir1/ImGui-AntiRecoil/blob/main/README-en.md)
-
 # ImGui-AntiRecoil  
 * ImGuiを使用した比較的シンプルなアンチリコイルツール。
 * 設定の保存/読み込み機能が削除されているので実装はご自身でお願いします。無いと相当不便です。
