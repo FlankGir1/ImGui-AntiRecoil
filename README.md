@@ -1,3 +1,7 @@
+[ 免責事項 ]  
+このソフトウェアはあくまでも学習や教育用です。
+このソフトウェアを上記の用途以外の目的で使用して発生したいかなる損害についても私(FlankGir1)は保証しません。
+
 [ Readme ]  
 [English](https://github.com/FlankGir1/ImGui-AntiRecoil/blob/main/README-en.md)
 
